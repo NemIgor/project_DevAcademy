@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Курсы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.css">
+    <link rel="stylesheet" href="page_trainer.css"> 
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="Logo_white_mini.png" alt="Логотип" class="header-logo-img">  
+        </div> 
+        <div class="header-switch_mode" id="themeToggle">
+            <div class="header-switch_mode-slider" id="slider"></div>
+            <div class="header-switch_mode-option" id="lightMode">Light</div>
+            <div class="header-switch_mode-option" id="darkMode">Dark</div>
+        </div>
+        <button class="header-profile" id="profile">
+            <img src="profile.png" alt="Профиль" class="header-profile-img"> 
+        </button> 
+    </header>
+    
+    <section class="task_solution">
+        <div class="task_solution-task">
+            <div class="task_solution-head">
+                <img src="icon_task.png" alt="Иконка Задание" class="task_solution-head-icon">
+                <h1>Задание</h1>
+                <button>
+                    <img src="icon_full_screen.png" alt="Полный экран" class="task_solution-icon_resize">
+                </button>
+                <button>
+                    <img src="icon_left.png" alt="Свернуть" class="task_solution-icon_resize">
+                </button>
+            </div>
+            <div class="task_solution-body">
+                <h1>Название Задачи</h1>
+                <p>ТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачиТекстЗадачи</p>
+                <h2>Пример 1</h2>
+                <p>Input: Данные на вход</p>
+                <p>Output: Данные на выход</p>
+                <h2>Пример 2</h2>
+                <p>Input: Данные на вход</p>
+                <p>Output: Данные на выход</p>
+                <h2>Пример 3</h2>
+                <p>Input: Данные на вход</p>
+                <p>Output: Данные на выход</p>
+            </div>
+        </div>
+        <div class="task_solution-editor">
+            <div class="task_solution-editor-code">
+                <div class="task_solution-head">
+                    <img src="icon_code.png" alt="Иконка Редактор" class="task_solution-head-icon">
+                    <h1>Редактор</h1>
+                    <button>
+                        <img src="icon_full_screen.png" alt="Полный экран" class="task_solution-icon_resize">
+                    </button>
+                    <button>
+                        <img src="icon_up.png" alt="Свернуть" class="task_solution-icon_resize">
+                    </button>
+                </div>
+                <div class="task_solution-editor-body">
+                    <!-- <button>
+                        <img src="" alt="">
+                        Запустить
+                    </button>
+                    <button>
+                        <img src="" alt="">
+                        Проверить
+                    </button> -->
+                </div>
+            </div>
+            <div class="task_solution-editor-result">
+                <div class="task_solution-head">
+                    <img src="icon_result.png" alt="Иконка Результат" class="task_solution-head-icon">
+                    <h1>Результат</h1>
+                    <button>
+                        <img src="icon_full_screen.png" alt="Полный экран" class="task_solution-icon_resize">
+                    </button>
+                    <button>
+                        <img src="icon_up.png" alt="Свернуть" class="task_solution-icon_resize">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <textarea id="editor">print("Hello, Python!")</textarea>
+    <button onclick="runCode()">Запустить</button>
+    <pre id="output"></pre>
+    
+    <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        lineNumbers: true,        // Включаем номера строк
+        mode: "python",           // Подсветка синтаксиса Python
+        theme: "default",         // Тема оформления
+        extraKeys: {
+            "Ctrl": "autocomplete",  // Включаем автодополнение при нажатии Ctrl+Space
+             "Ctrl-/": "toggleComment",  // Включаем горячую клавишу для комментирования
+        "Cmd-/": "toggleComment"
+        },
+        hintOptions: {
+            completeSingle: false  // Отключаем автозавершение при вводе одного символа
+        }
+    });
+    
+        async function runCode() {
+            let code = editor.getValue();
+            
+            let response = await fetch("http://127.0.0.1:5000/run", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ code })
+            });
+    
+            let result = await response.json();
+            document.getElementById("output").textContent = result.output || result.error;
+        }
+    // // Функция для отображения подсказок только после ввода слова
+    // function showAutocomplete() {
+    //     var cursor = editor.getCursor();  // Получаем текущую позицию курсора
+    //     var line = editor.getLine(cursor.line);  // Получаем строку, на которой находится курсор
+    //     var word = line.substring(0, cursor.ch).trim();  // Получаем слово перед курсором
+
+    //     // Показываем подсказки только если в строке есть слово, которое начал вводить пользователь
+    //     if (word.length > 0 && /\w/.test(word[word.length - 1])) {
+    //         editor.showHint();  // Показываем подсказки
+    //     }
+    // }
+
+    // Отслеживаем событие "keyup" для показа подсказок после начала ввода слова
+    // editor.on("keyup", function(cm, event) {
+    //     var cursor = cm.getCursor(); // Получаем текущую позицию курсора
+    //     var line = cm.getLine(cursor.line); // Получаем строку
+
+    //     // Проверяем, что курсор не в начале строки и что перед курсором есть слово
+    //     var word = line.substring(0, cursor.ch).trim();  // Получаем слово перед курсором
+
+    //     if (word.length > 0 && /\w/.test(word[word.length - 1])) {
+    //         cm.showHint();  // Показываем подсказки
+    //     }
+    // });
+    // </script> -->
+    <script src="pymaster_bec.js"></script> 
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* Импорт шрифторв */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Обнуленине отступов */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Базовые настройки страницы */
+body {
+    font-family: "Roboto Mono", Arial;
+    background-color: rgba(245, 245, 245, 1);
+    min-width: 600px;
+    transition: 0.3s;
+}
+
+/*------------------------------------*\
+    #SECTION-HEADER
+\*------------------------------------*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+    padding: 1px;
+    color: white; 
+    background-color: rgba(252, 252, 252, 1);
+    top: 0; 
+    left: 0;
+    width: 100vw;  
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
+    box-sizing: border-box; 
+    transition: 0.3s;
+}
+
+.header-logo { 
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold; 
+    transition: 0.3s;
+}
+
+.header-logo-img {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    object-fit: cover; 
+}
+    
+.header-switch_mode {
+    display: flex;
+    align-items: center;
+    background: #ddd;
+    border-radius: 25px;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+    width: 160px;
+    height: 30px;
+    gap: 10px;
+}
+
+.header-switch_mode-option {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a2b33;
+    z-index: 1;
+}
+
+.header-switch_mode-slider {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: 80px;
+    height: 32px;
+    background: white;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+        
+.header-profile {
+    display: inline-block;
+    width: 70px; 
+    background-image: url('profile.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 10px 0px 0px;
+    border: none;
+    margin-left: 20px;
+    background-color: rgba(254, 254, 254, 1);
+}
+        
+.header-profile-img {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+}
+
+/*------------------------------------*\
+    #SECTION-TASK_SOLUTION
+\*------------------------------------*/
+
+.task_solution {
+    display: flex;
+    justify-content: center;  
+    gap: 15px;
+    padding: 15px;
+}
+
+.task_solution-task {
+    width: 50%;
+    height: calc(100vh - 125px);
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.task_solution-head {
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    background-color:  #1a2b33;
+    border-radius: 15px 15px 0 0; 
+    border: none;
+    transition: 0.3s;
+}
+
+.task_solution-head-icon {
+    width: 25px;
+    margin-left: 10px;
+}
+
+.task_solution-icon_resize {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.task_solution-head h1{
+    flex: 1;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.task_solution-head button {
+    display: flex;
+    align-items: center;
+    background-color: #1a2b33;
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.task_solution-editor {
+    display: block;
+    width: 50%;
+    height: calc(100vh - 125px);
+    box-sizing: border-box; 
+}
+
+.task_solution-editor-code {
+    width: 100%;
+    height: calc(100% - 55px);
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.task_solution-editor-result {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.task_solution-body {
+    width: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box; 
+    word-wrap: break-word;
+}
+
+.task_solution-body h1 {
+    font-size: 30px;
+    padding-bottom: 7px;
+}
+
+.task_solution-body p {
+    padding-bottom: 7px;
+}
+
+.task_solution-body h2 {
+    padding-bottom: 7px;
+    font-size: 23px;
+}
+
+/*------------------------------------*\
+    #SECTION-DARK_MODE
+\*------------------------------------*/
+
+.dark-mode {
+    background-color: rgb(28, 28, 28);
+    transition: 0.3s;
+}
+
+.dark-mode .header-switch_mode-slider {
+    transform: translateX(82px);
+    background-color: rgb(0, 26, 30);
+}
+
+.dark-mode #darkMode{
+    color: rgb(237, 237, 237);
+    transition: 0.3s;
+}
+
+.dark-mode header {
+    box-shadow: rgba(237, 237, 237, 0.3) 0px 1px 4px;
+    background-color: rgb(28, 28, 28);
+    transition: 0.3s;
+}
+
+.dark-mode .header-profile {
+    background-color: rgb(28, 28, 28);
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution-task {
+    background-color: rgba(35, 35, 35);
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution-head {
+    background-color: rgba(51, 51, 51);
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution-editor-code {
+    background-color: rgba(35, 35, 35);
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution-editor-result {
+    background-color: rgba(35, 35, 35);
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution-head button {
+    background-color: rgba(51, 51, 51);
+    transition: 0.3s;
+}
+
+.dark-mode .header-profile   {
+    background-image: url('profile-dark.png');
+    transition: 0.3s;
+}
+
+.dark-mode .task_solution {
+    color: rgb(237, 237, 237);
+}
+
+/* Модуль шапка */
+
+/* Модуль с задачей */
+
+
+.CodeMirror {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    background-color: #918a8a;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    height: 400px;
+    line-height: 1.5;
+}
+
+.CodeMirror-scroll {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #ddd;
+}
+
+.CodeMirror-cursor {
+    border-left: 2px solid #f200ff;  /* Красный курсор */
+}
+
+.cm-comment {
+    color: #008000 !important;  /* Зеленый для комментариев */
+}
+
+    /* Меняем внешний вид области ввода (textarea) */
+    textarea {
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+    }
