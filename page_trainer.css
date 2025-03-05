@@ -86,7 +86,7 @@ header {
 .header-profile {
     display: inline-block;
     width: 70px; 
-    background-image: url('profile.png');
+    background-image: url('img_page_trainer/profile.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -270,7 +270,7 @@ header {
 }
 
 .dark-mode .header-profile   {
-    background-image: url('profile-dark.png');
+    background-image: url('img_page_trainer/profile-dark.png');
     transition: 0.3s;
 }
 
