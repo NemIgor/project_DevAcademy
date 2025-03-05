@@ -39,7 +39,7 @@ header {
 .logo {
     display: inline-block;
     width: 200px; 
-    background-image: url('picture/Logo_white.png');
+    background-image: url('img_general_pages/Logo_white.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -725,7 +725,7 @@ header button:hover {
 
 .show-pas {
     text-decoration: none;
-    background: url('picture/show-pass.png') 0 0 no-repeat;
+    background: url('img_general_pages/show-pass.png') 0 0 no-repeat;
     background-size: contain;
     width: 20px;
     height: 20px;
@@ -736,7 +736,7 @@ header button:hover {
 }
 
 .show-pas.view {
-    background: url('picture/hide-pass.png') 0 0 no-repeat;
+    background: url('img_general_pages/hide-pass.png') 0 0 no-repeat;
     background-size: contain;
     width: 20px;
     height: 20px;
@@ -1009,7 +1009,7 @@ header button:hover {
 }
 
 .dark-mode .logo {
-    background-image: url('picture/Logo_dark.png');
+    background-image: url('img_general_pages/Logo_dark.png');
 }
 
 .dark-mode .nav-curs-indicator {
