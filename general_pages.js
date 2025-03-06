@@ -36,12 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
         navIndicator.style.width = btnUp.offsetWidth + 'px';
         navIndicator.style.left = btnUp.offsetLeft + 'px';
         formsContainer.classList.add('signup');
+        formsContainer.style.height = '160px';
     });
 
     btnIn.addEventListener('click', () => {
         navIndicator.style.width = btnIn.offsetWidth + 'px';
         navIndicator.style.left = btnIn.offsetLeft + 'px';
         formsContainer.classList.remove('signup');
+        formsContainer.style.height = '200px';
     });
 
     const indicator = document.querySelector('.nav-curs-indicator');
@@ -63,6 +65,7 @@ function toggleForm(form) {
     const lineAuth = document.querySelector('.line-auth');
     const btnIn = document.querySelector('.btn-in');
     const btnUp = document.querySelector('.btn-up');
+    const formsContainer = document.querySelector('.forms-container');
 
     if (form === 'sign-in') {
         signInForm.classList.remove('hidden');
@@ -70,12 +73,14 @@ function toggleForm(form) {
         lineAuth.style.left = '0';
         btnIn.classList.add('active');
         btnUp.classList.remove('active');
+        formsContainer.style.height = '200px';
     } else {
         signInForm.classList.add('hidden');
         signUpForm.classList.remove('hidden');
         lineAuth.style.left = '50%';
         btnIn.classList.remove('active');
         btnUp.classList.add('active');
+        formsContainer.style.height = "160px";
     }
 }
 
@@ -83,27 +88,48 @@ document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("blurButton");
     const overlay = document.getElementById("overlay");
     const loginMenu = document.getElementById("regForm");
-    const modalContent = document.querySelector(".regForm-container");
-    const body = document.body;
     const navIndicator = document.querySelector('.nav-indicator');
+
+    // При загрузке проверяем, было ли окно открыто в прошлый раз
+    const isLoginMenuOpen = localStorage.getItem("loginMenuOpen");
+    if (isLoginMenuOpen === "true") {
+        overlay.style.display = "block";
+        loginMenu.style.display = "block";
+        navIndicator.style.width = 90 + 'px';
+        setTimeout(() => {
+            loginMenu.classList.add("show");
+        }, 10); 
+    }
 
     button.addEventListener("click", function () {
         overlay.style.display = "block"; 
-        loginMenu.style.display = "block"; 
+        loginMenu.style.display = "block";
         navIndicator.style.width = 90 + 'px';
+        setTimeout(() => {
+            loginMenu.classList.add("show");
+        }, 10); 
+        
+        // Сохраняем, что окно открыто
+        localStorage.setItem("loginMenuOpen", "true");
     });
 
+    // Закрытие окна при клике вне его
     document.addEventListener('click', (event) => {
         if (!loginMenu.contains(event.target) && !button.contains(event.target)) {
-            overlay.style.display = 'none';
-            loginMenu.style.display = 'none';
+            loginMenu.classList.remove("show");
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                loginMenu.style.display = 'none';
+            }, 500);
+
+            // Сохраняем, что окно закрыто
+            localStorage.setItem("loginMenuOpen", "false");
         }
     });
- 
-})
+});
+
 
 // Темная тема
-
 const toggleContainer = document.getElementById("themeToggle");
 const slider = document.getElementById("slider");
 const lightMode = document.getElementById("lightMode");
@@ -111,15 +137,29 @@ const darkMode = document.getElementById("darkMode");
 const body = document.body;
 let isDarkMode = false;
 
-// Обработчик клика только по "Light"
+// Проверка текущей темы при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add("dark-mode");
+        isDarkMode = true;
+    } else {
+        body.classList.remove("dark-mode");
+        isDarkMode = false;
+    }
+});
+
+// Обработчик клика по "Light"
 lightMode.addEventListener("click", () => {
     isDarkMode = false;
     body.classList.remove("dark-mode");
+    localStorage.setItem('theme', 'light');
 });
 
-// Обработчик клика только по "Dark"
+// Обработчик клика по "Dark"
 darkMode.addEventListener("click", () => {
     isDarkMode = true;
     body.classList.add("dark-mode");
+    localStorage.setItem('theme', 'dark');
 });
 
