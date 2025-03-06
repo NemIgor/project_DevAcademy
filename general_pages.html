@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Курсы</title>
+    <link rel="stylesheet" href="general_pages.css"> 
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img src="img_general_pages/Logo_white.png" alt="Логотип" class="custom-image"> 
+        </a>    
+
+
+       <div class="courses">
+            <nav class="nav-curs">
+                <div class="btn-python">Python</div>
+                <div class="btn-java">Java</div>
+                <div class="nav-curs-indicator"></div>
+            </nav>
+       </div>
+
+
+        <div class="toggle-container" id="themeToggle">
+            <div class="toggle-slider"></div>
+            <div class="toggle-option" id="lightMode">Light</div>
+            <div class="toggle-option" id="darkMode">Dark</div>
+        </div>
+
+        <button id="blurButton" class="sign-in">
+            Войти
+            <span></span>
+        </button>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-images">
+            <img src="img_general_pages/img2.jpg" alt="Код на экране" class="hero_img_1 img-hero-only"> 
+            <img src="img_general_pages/img4.jpg" alt="Программист" class="hero_img_2 img-hero-only"> 
+            <div class="hero-text">Погрузись в Python</div>
+        </div>
+    </section>
+    
+    <section class="description">
+        <div class="description_text">       
+            <h1>Открой для себя мир Python</h1>
+            <h2>Освойте искусство программирования с нашими курсами по Python!</h2> 
+            <button>Начать обучение</button> 
+        </div>
+        <img src="img_general_pages/img3.jpeg" alt="Стол Программиста" class="description_img_1 img-hero-only"> 
+    </section>
+    
+    <section class="salary">
+        <div class="salary-info">            
+            <div class="salary-text">
+                <h2>С ростом опыта<br>будет увеличиваться и доход</h2>
+                <div class="hh">
+                    <img src="img_general_pages/hh.png" alt="Иконка «HeadHunter»"> 
+                    <p>По данным «HeadHunter», средняя заработная плата<br>Python-разработчика составляет 200 000 рублей.</p>
+                </div>
+            </div>
+            <div class="salary-levels">
+                <div class="level junior">От 90 000<br><span>Junior</span></div>
+                <div class="level middle">От 180 000<br><span>Middle</span></div>
+                <div class="level senior">От 330 000<br><span>Senior</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats_container">
+        <div class="container">
+            <div class="stats-head">
+                <h1><span>Python</span> - идеальный выбор для тех, кто только начинает свой путь в программировании</h1>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <h2><span>2</span> место</h2>
+                    <p>в списке самых востребованных<br >языков программирования</p>
+                </div>
+                <div class="stat">
+                    <h2><span>1500+</span></h2>
+                    <p>вакансий Python разработчиков<br>на порталах по поиску работы</p>
+                </div>
+                <div class="stat">
+                    <h2>на <span>10%</span></h2>
+                    <p>ежегодно растут средние<br>заработные платы разработчиков</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats_container">
+        <div class="container">
+            <div class="benefits_head">
+                <h1>Станьте востребованным<br><span>IT-специалистом</span></h1>
+                <p>Айти-специалисты разрабатывают программы,<br>
+                    сайты и сервисы, а также обеспечивают их<br>
+                    бесперебойную работу. Без них не будут<br>
+                    функционировать многие привычные цифровые<br>
+                    сервисы — от онлайн-банков до государственных<br>
+                    порталов.</p>
+            </div>
+            <div class="benefits">
+                <h2>Чтобы привлечь новых специалистов и поддержать действующих<br>
+                    cотрудников, аккредитованные IT-компании предоставляют<br>
+                    различные льготы:</h2>
+                <div class="benefits_buttons">
+                    <a href="https://blog.domclick.ru/ipoteka/post/ipoteka-dlya-it-usloviya-lgotnoj-programmy-v-sbere-instrukciya-i-spisok-kompanij" target="_blank" class="link-it">
+                        <div class="button_orange" ><p>Льготная ипотека</p></div>
+                    </a>
+                    <a href="https://www.gosuslugi.ru/armydelay" target="_blank" class="link-it">
+                        <div class="button_orange"><p>Отсрочка призыва до 27 лет</p></div>
+                    </a>
+                    <a href="https://t-j.ru/news/it-not-army/" target="_blank" class="link-it">
+                        <div class="button_orange"><p>Отсрочка от частичной мобилизации</p></div>
+                    </a>
+                    <a href="https://www.vbr.ru/banki/domrfbank/kredity/kredit-dlya-itspecialistov/" target="_blank" class="link-it kostil">
+                        <div class="button_orange"><p>Потребительский кредит</p</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats_container">
+        <div class="container">
+            <div class="tech-head">
+                <h1>Финальным проектом курса станет <br>Telegram-бот на aiogram + SQLite</h1>
+            </div>
+            <div class="tech">
+                <div class="tech-container">
+                    <div class="tech-stack">
+                        <p><strong>Технологический стек:</strong></p>
+                        <p><strong>Aiogram 3.0</strong> — наш "мостик" в мир Telegram, где каждая команда становится элегантным асинхронным хендлером</p>
+                        <p><strong>SQLite</strong> — миниатюрный, но мощный хранитель данных, идеальный для старта (и не только)</p>
+                        <p><strong>Python 3.9+</strong> — язык, где даже змеи летают, особенно в связке с async/await</p>
+                    </div>
+                    <img src="img_general_pages/laptop-mockup.png" alt="Mockup Laptop" class="laptop">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма для входа-регистрации -->
+    <div id="overlay" class="overlay"></div>
+    
+    <div id="regForm" class="regForm">
+        <div class="regForm-container">
+            <nav class="nav">
+                <div class="btn-in active">Войти</div>
+                <div class="btn-up">Зарегестрироваться</div>
+                <div class="nav-indicator"></div>
+            </nav>
+            
+            <div class="forms-container">
+                <div class="form signin-form">
+                    <div class="data">
+                        <input class="login" type="text" placeholder="Имя пользователя">
+                        <hr class="line-auth">
+                        <input class="password" type="password" placeholder="Пароль">
+                        <a href="#" class="show-pas"></a>
+                        <button class="sign-in-btn"></button>
+                    </div>
+            
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="myCheckbox">
+                        <span class="checkmark"></span>
+                        <p>Запомнить меня</p>
+                    </label>
+            
+                    <div>
+                        <a href="#" class="forgot-pass">Забыли пароль?</a>
+                    </div>
+                </div>
+                
+                <div class="form signup-form">
+                    <div class="data-reg">
+                        <input class="reg-login" type="text" placeholder="Имя пользователя">
+                        <hr class="line-auth">
+                        <input class="reg-pas-fir" type="password" placeholder="Пароль">
+                        <hr class="line-auth">
+                        <input class="reg-pas-sec" type="password" placeholder="Повторите пароль">
+                        <button class="sign-in-btn-reg"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="general_pages.js"></script> 
+</body>
+</html>
