@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Курсы</title>
+    <link rel="stylesheet" href="page_trainer.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.css">
-    <link rel="stylesheet" href="page_trainer.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/idea.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/darcula.min.css">
 </head>
 <body>
     <header>
@@ -25,7 +27,6 @@
             <img src="img_page_trainer/profile.png" alt="Профиль" class="header-profile-img"> 
         </button> 
     </header>
-    
     <section class="task_solution">
         <div class="task_solution-task">
             <div class="task_solution-head">
@@ -65,14 +66,12 @@
                     </button>
                 </div>
                 <div class="task_solution-editor-body">
-                    <!-- <button>
-                        <img src="" alt="">
-                        Запустить
-                    </button>
-                    <button>
-                        <img src="" alt="">
-                        Проверить
-                    </button> -->
+                    <textarea id="editor">print("Hello, Python!")</textarea>
+                    <div class="editor-body-buttons">
+                        <button class="editor-button-run" onclick="runCode()">Запустить</button>
+                        <button class="editor-button-send" onclick="sendCode()">Отправить</button>
+                    </div>
+                    <pre id="output"></pre>
                 </div>
             </div>
             <div class="task_solution-editor-result">
@@ -87,102 +86,8 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <textarea id="editor">print("Hello, Python!")</textarea>
-    <button onclick="runCode()">Запустить</button>
-    <pre id="output"></pre>
-    
-    <script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-        lineNumbers: true,        // Включаем номера строк
-        mode: "python",           // Подсветка синтаксиса Python
-        theme: "default",         // Тема оформления
-        extraKeys: {
-            "Ctrl": "autocomplete",  // Включаем автодополнение при нажатии Ctrl+Space
-             "Ctrl-/": "toggleComment",  // Включаем горячую клавишу для комментирования
-        "Cmd-/": "toggleComment"
-        },
-        hintOptions: {
-            completeSingle: false  // Отключаем автозавершение при вводе одного символа
-        }
-    });
-    
-        async function runCode() {
-            let code = editor.getValue();
-            
-            let response = await fetch("http://127.0.0.1:5000/run", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ code })
-            });
-    
-            let result = await response.json();
-            document.getElementById("output").textContent = result.output || result.error;
-        }
-    // // Функция для отображения подсказок только после ввода слова
-    // function showAutocomplete() {
-    //     var cursor = editor.getCursor();  // Получаем текущую позицию курсора
-    //     var line = editor.getLine(cursor.line);  // Получаем строку, на которой находится курсор
-    //     var word = line.substring(0, cursor.ch).trim();  // Получаем слово перед курсором
-
-    //     // Показываем подсказки только если в строке есть слово, которое начал вводить пользователь
-    //     if (word.length > 0 && /\w/.test(word[word.length - 1])) {
-    //         editor.showHint();  // Показываем подсказки
-    //     }
-    // }
-
-    // Отслеживаем событие "keyup" для показа подсказок после начала ввода слова
-    // editor.on("keyup", function(cm, event) {
-    //     var cursor = cm.getCursor(); // Получаем текущую позицию курсора
-    //     var line = cm.getLine(cursor.line); // Получаем строку
-
-    //     // Проверяем, что курсор не в начале строки и что перед курсором есть слово
-    //     var word = line.substring(0, cursor.ch).trim();  // Получаем слово перед курсором
-
-    //     if (word.length > 0 && /\w/.test(word[word.length - 1])) {
-    //         cm.showHint();  // Показываем подсказки
-    //     }
-    // });
-    // </script> -->
     <script src="page_trainer.js"></script> 
 </body>
 </html>

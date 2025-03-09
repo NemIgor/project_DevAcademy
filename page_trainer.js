@@ -21,27 +21,53 @@ let isDarkMode = false;
 lightMode.addEventListener("click", () => {
     isDarkMode = false;
     body.classList.remove("dark-mode");
+    editor.setOption("theme", "idea");  
 });
 
 // Обработчик клика только по "Dark"
 darkMode.addEventListener("click", () => {
     isDarkMode = true;
     body.classList.add("dark-mode");
+    editor.setOption("theme", "darcula"); 
 });
 // Шапка
 
 
-const editor = document.querySelector(".editor")
-const highlight = editor => {
-  // highlight.js does not trim old tags,
-  // let's do it by this hack.
-  editor.textContent = editor.textContent
-  hljs.highlightBlock(editor)
+var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+    lineNumbers: true,        // Включаем номера строк
+    mode: "python",           // Подсветка синтаксиса Python
+    theme: "idea",
+    extraKeys: {
+        "Ctrl": "autocomplete",  // Включаем автодополнение при нажатии Ctrl+Space
+         "Ctrl-/": "toggleComment",  // Включаем горячую клавишу для комментирования
+    "Cmd-/": "toggleComment"
+    },
+    hintOptions: {
+        completeSingle: false  // Отключаем автозавершение при вводе одного символа
+    }
+});
+
+async function runCode() {
+    let code = editor.getValue();
+    
+    let response = await fetch("http://127.0.0.1:5000/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code })
+    });
+
+    let result = await response.json();
+    document.getElementById("output").textContent = result.output || result.error;
 }
-const jar = new CodeJar(editor, withLineNumbers(highlight))
 
+// Функция для подгонки высоты редактора
+function resizeEditor() {
+    var container = document.querySelector('.task_solution-editor');  // Находим родительский контейнер
+    editor.setSize(container.clientWidth, container.clientHeight);  // Устанавливаем размеры редактора
+}
 
-jar.updateCode(localStorage.getItem("code"))
-jar.onUpdate(code => {
-  localStorage.setItem("code", code)
-})
+// Слушаем изменение размеров окна и вызываем функцию
+window.addEventListener("resize", resizeEditor);
+
+// Вызываем resizeEditor при загрузке страницы
+window.addEventListener("load", resizeEditor);
