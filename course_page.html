@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>бахмут бахмут</title>
+    <link rel="stylesheet" href="course_page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div>
+
+        <header>
+            <img class="logo" src="Лого PNG (ОР_V2).png" alt="Logo">
+            <img class="user_profile" src="user.png" alt="User Profile">
+        </header>
+
+        <main>
+            <div class="container">
+                <section class="menu">
+                    <div class="py_developer">
+                        <p>Python-разработчик</p>
+                        <div class="choise">
+                            <a href="#" class="description">Описание</a>
+                            <a href="#" class="programm">Программа</a>
+                        </div>
+                    </div>
+                    <div class="main_progress">
+                        <div class="progress_wrapper">
+                            <p class="main_text">Общий прогресс курса</p>
+                            <div class="main_progress_bar">
+                                <div class="progress" style="width: 8%"></div>
+                            </div>
+                            <p class="main_progress_procent">8%</p>
+                        </div>
+                        <img src="pylogo1.png" alt="Python Logo">
+                    </div>
+                </section>
+
+                <section class="lessons">
+                    <div class="scroll-lessons__wrp js-scroll-content js-scroll-lessons">
+                        <section class="les1 js-lesson-item">
+                            <p class="title">Знакомство с языком Python</p>
+                            <div class="count_wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%;"></div>
+                                </div>
+                                <p class="text_progress">9/10 задач решены</p>
+                            </div>
+                            <p class="procent_progress">90%</p>
+                        </section>
+
+                        <section class="les2 js-lesson-item">
+                            <p class="title">Условия и логические операции</p>
+                            <div class="count_wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%;"></div>
+                                </div>
+                                <p class="text_progress">4/10 задач решены</p>
+                            </div>
+                            <p class="procent_progress">40%</p>
+                        </section>
+
+                        <section class="les3 js-lesson-item">
+                            <p class="title">Простые встроенные функции</p>
+                            <div class="count_wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <p class="text_progress">0/10 задач решены</p>
+                            </div>
+                            <p class="procent_progress">0%</p>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Библиотеки -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.3.1/smooth-scrollbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.3.1/plugins/overscroll.js"></script>
+    <script>
+        $(document).ready(function () {
+            var Scrollbar = window.Scrollbar;
+            Scrollbar.use(window.OverscrollPlugin);
+
+            var customScroll = Scrollbar.init(document.querySelector('.js-scroll-lessons'), {
+                plugins: {
+                    overscroll: true
+                }
+            });
+
+            var lessonItem = $('.js-lesson-item');
+            lessonItem.eq(0).addClass('item-focus');
+            lessonItem.eq(1).addClass('item-next');
+
+            customScroll.addListener(function (status) {
+                var $content = $('.js-scroll-content');
+                var viewportScrollDistance = status.offset.y;
+                var top = status.offset.y;
+
+                var $lis = $('.js-lesson-item');
+                for (var i = 0; i < $lis.length; i++) {
+                    var $li = $($lis[i]);
+                    var liTop = $li.position().top;
+                    var liRelTop = liTop;
+
+                    if (liRelTop + $li.parent().scrollTop() > top) {
+                        if (!$li.hasClass('item-focus')) {
+                            $li.prev().addClass('item-hide');
+                            $lis.removeClass('item-focus');
+                            $lis.removeClass('item-next');
+                        }
+                        $li.removeClass('item-hide');
+                        $li.addClass('item-focus');
+                        $li.next().addClass('item-next');
+                        break;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
