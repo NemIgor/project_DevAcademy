@@ -1,0 +1,345 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+.inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 1600px;
+    margin: 0 auto 137px auto;
+    gap: 300px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 40px;
+}
+
+.user_profile {
+    width: 60px;
+    height: 60px;
+    margin-right: 65px;
+    margin-top: 35px;
+    border: 2px solid #C87100;
+    border-radius: 50%;
+}
+
+.py_developer {
+    width: 500px;
+    height: 100px;
+}
+
+.py_developer p {
+    font-size: 40px;
+    font-weight: 700;
+    height: 66px;
+    color: #001A1E;
+    margin-bottom: 15px;
+}
+
+.description {
+    width: 160px;
+    height: 45px;
+}
+
+.choise a {
+    font-size: 35px !important;
+}
+
+.programm {
+    width: 186px;
+    height: 45px;
+    margin-right: 125px;
+}
+
+.choise a:hover {
+    border-bottom: 4px solid #C87100;
+} 
+
+.choise {
+    display: flex;
+    justify-content: space-between;
+}
+
+.py_developer a {
+    text-decoration: none;
+    color: #001A1E;
+    font-size: 45px;
+}
+
+.main_progress {
+    width: 600px;
+    height: 150px;
+    border: 2px;
+    border-radius: 30px;
+    background-color: #001A1E;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_progress .main_text {
+    width: 380px;
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.main_progress img {
+    width: 140px;
+    height: 140px;
+    margin-right: 45px;
+}
+
+.main_progress_bar {
+    width: 285px;
+    height: 14px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+    bottom: -10px;
+}
+
+.progress_wrapper {
+    display: flex;
+    flex-direction: column; 
+}
+
+.main_progress_procent {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    font-size: 30px !important;
+    color: white;
+    left: 310px;
+    bottom: 15px;
+}
+
+/* =================================================================================== */
+
+.les1, .les2, .les3 {
+    width: 100%;
+    height: 150px;
+    border: 2px solid #010910;
+    border-radius: 30px;
+    margin-bottom: 88px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.35s ease-in-out; 
+    opacity: 0; 
+    transform: scale(0.7);
+    background: #2c435f;
+    /* background-image: linear-gradient(147deg, #4a90e2 0%, #0072ff 74%); */
+    box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-lessons__wrp .scrollbar-track {
+    display: none !important; 
+}
+
+.scroll-lessons__wrp {
+    width: 100%;
+    height: 500px; 
+    overflow: auto;
+    padding: 50px;
+    box-shadow: 30px 30px 60px 10px rgba(0, 0, 0, 0.3);
+    background: #65718C;
+    border-radius: 15px;
+}
+
+.les1.item-hide, .les2.item-hide, .les3.item-hide {
+    opacity: 0;
+    transform: scale(0.7);
+}
+
+.les1.item-focus, .les2.item-focus, .les3.item-focus {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.les1.item-next, .les2.item-next, .les3.item-next {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.les1:hover, .les2:hover, .les3:hover {
+    transform: scale(1.05); 
+}
+
+.lessons {
+    width: 100%;
+    max-width: 1400px; 
+    padding: 25px;
+    margin-bottom: 278px;
+}
+
+.title {
+    width: 600px;
+    height: 54px;
+    font-size: 38px;
+    white-space: nowrap;
+    font-weight: 400;
+    margin-left: 40px;
+}
+
+.count_wrapper {
+    display: flex;
+    flex-direction: column; 
+}
+
+.progress-bar {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    margin-right: 120px;
+    width: 400px;
+    height: 22px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative; 
+}
+
+.progress {
+    height: 100%;
+    background-color: #b06b00;
+    transition: width 0.3s ease-in-out;
+}
+
+.text_progress {
+    font-size: 26px;
+    width: 360px;
+    height: 36px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.procent_progress {
+    font-size: 30px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Темная тема */
+
+/* .toggle-container {
+    display: flex;
+    align-items: center;
+    background: #ddd;
+    border-radius: 25px;
+    padding: 4px;
+    cursor: pointer;
+    position: relative;
+    width: 160px;
+    height: 30px;
+    gap: 10px;
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a2b33;
+    z-index: 1;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: 80px;
+    height: 32px;
+    background: white;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .toggle-slider {
+    transform: translateX(82px);
+    background-color: rgb(0, 26, 30);
+}
+
+.dark-mode #darkMode{
+    color: rgb(237, 237, 237);
+}
+
+.dark-mode header {
+    background-color: #1a2b33;
+}
+
+.dark-mode .description_text {
+    color: rgb(237, 237, 237)
+}
+
+.dark-mode header button {
+    background-color: #1a2b33;
+    color: rgb(237, 237, 237);
+}
+
+.dark-mode {
+    background-color: #1a2b33;
+    color: rgb(237, 237, 237);
+} */
